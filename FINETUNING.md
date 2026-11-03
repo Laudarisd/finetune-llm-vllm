@@ -538,13 +538,3 @@ model = AutoModelForImageTextToText.from_pretrained(model_path, device_map="auto
 
 Use the project's inference script/notebook for the full image and chat-template flow. Evaluate on held-out floor plans and show sample predictions alongside aggregate measures.
 
-## 10. Portfolio images
-
-Add image files later and update these example paths as needed:
-
-1. Dataset example: `![Floor-plan dataset example](images/portfolio/dataset-example.png)`
-2. Training metrics: `![Training and validation curves](images/portfolio/training-curves.png)`
-3. Input and prediction: `![Floor-plan question and model answer](images/portfolio/inference-example.png)`
-4. Annotated output: `![Floor-plan annotations](images/portfolio/annotation-output.png)`
-
-Create `images/portfolio/` or change the paths to the folder where you keep portfolio assets.
