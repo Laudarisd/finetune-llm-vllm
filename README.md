@@ -386,14 +386,7 @@ The script loads the merged model path from `config.yaml` and saves an overlay i
 
 The checked-in run summary records 18,000 global steps, training loss 0.1924, best validation loss 0.4157557, and the best checkpoint at step 3,000. The final evaluation shown in the log reports loss 0.8158 and mean token accuracy 0.8437 at epoch 0.6247; this is a different evaluation point from the best checkpoint. These language-model metrics do not replace task-level evaluation of counts, junction detection, polygon quality, and generalization to unseen plans.
 
-### Portfolio images
 
-Add license-cleared screenshots or example predictions to `img/` and link them here:
-
-```markdown
-![Floor-plan input](img/floor-plan-input.png)
-![Model prediction](img/floor-plan-prediction.png)
-```
 
 ## GitHub publishing notes
 
