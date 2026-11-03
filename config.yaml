@@ -1,0 +1,64 @@
+# Central configuration for training and inference.
+# Paths are relative to the repository root unless they are absolute paths.
+
+model:
+  # Hugging Face repository used by model_downloader/download_model.py.
+  repository: Qwen/Qwen3.5-9B
+  # Local model directory loaded by the trainer.
+  directory: models/Qwen3.5-9B
+  # Location of the merged model produced after training.
+  merged_directory: outputs/qwen35-floorplan-lora/merged-best
+  load_in_4bit: true
+
+data:
+  train_file: train_data/vlm_train.jsonl
+  validation_file: train_data/vlm_val.jsonl
+  # Percentage of each split selected after deterministic shuffling.
+  train_percentage: 100
+  validation_percentage: 20
+  image_cache_directory: train_data/image_cache
+  max_image_side: 1024
+  max_sequence_length: 1024
+
+training:
+  output_directory: outputs/qwen35-floorplan-lora
+  tensorboard_directory: outputs/tensorboard/qwen35-floorplan-lora
+  # Set GPU_IDS in the environment to override this list, e.g. "0,1".
+  gpu_ids: "0,1,2"
+  seed: 42
+  epochs: 10
+  train_batch_size_per_device: 4
+  evaluation_batch_size_per_device: 4
+  gradient_accumulation_steps: 3
+  learning_rate: 0.0001
+  scheduler: cosine
+  warmup_steps: 100
+  gradient_checkpointing: true
+  logging_steps: 10
+  save_steps: 1000
+  evaluation_steps: 1000
+  report_to: tensorboard
+  resume_from_checkpoint: null
+
+lora:
+  rank: 16
+  alpha: 32
+  dropout: 0.05
+  bias: none
+  # The active Unsloth setup applies LoRA to all linear modules.
+  target_modules: all-linear
+  finetune_vision_layers: true
+  finetune_language_layers: true
+  finetune_attention_modules: true
+  finetune_mlp_modules: true
+
+evaluation:
+  best_metric: eval_loss
+  greater_is_better: false
+  early_stopping_patience: 15
+  early_stopping_threshold: 0.0001
+
+dataloader:
+  workers: 8
+  pin_memory: true
+  persistent_workers: true

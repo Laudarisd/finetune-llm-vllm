@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">Floor-plan fine-tuning workflow</title>
+  <desc id="desc">Floor plan image and question are formatted as chat data, passed through a Qwen vision-language model with LoRA adapters, evaluated, and exported for inference.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#101827"/><stop offset="1" stop-color="#1d3150"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#85a6d9"/></marker>
+    <style>
+      .title{font:700 25px Inter,Arial,sans-serif;fill:#f4f7fb}.label{font:600 16px Inter,Arial,sans-serif;fill:#f4f7fb}.small{font:13px Inter,Arial,sans-serif;fill:#b6c6dc}.box{fill:#1b2b43;stroke:#385273;stroke-width:1.5}.line{stroke:#85a6d9;stroke-width:2.5;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="300" rx="22" fill="url(#bg)"/>
+  <text x="42" y="48" class="title">Floor-plan understanding · vision-language fine-tuning</text>
+  <path d="M243 166 H283 M468 166 H508 M693 166 H733 M918 166 H958" class="line"/>
+  <g transform="translate(35 92)">
+    <rect width="208" height="148" rx="15" class="box"/>
+    <path d="M27 34h68v37H27z M95 34h48v60H95z M27 71h68v51H27z M95 94h48v28H95z" fill="none" stroke="#47d7c5" stroke-width="3"/>
+    <text x="104" y="145" text-anchor="middle" class="label">Plan + question</text>
+    <text x="104" y="165" text-anchor="middle" class="small">image and prompt</text>
+  </g>
+  <g transform="translate(283 92)">
+    <rect width="185" height="148" rx="15" class="box"/>
+    <path d="M51 45h83v57H51z M66 59h53v7H66z M66 74h41v7H66z M66 89h48v6H66z" fill="none" stroke="#7ca8ff" stroke-width="3"/>
+    <text x="92" y="145" text-anchor="middle" class="label">Chat JSONL</text>
+    <text x="92" y="165" text-anchor="middle" class="small">paired target answer</text>
+  </g>
+  <g transform="translate(508 92)">
+    <rect width="185" height="148" rx="15" class="box"/>
+    <circle cx="92" cy="69" r="29" fill="none" stroke="#47d7c5" stroke-width="3"/>
+    <path d="M78 69h28M92 55v28M52 69h11M121 69h11M92 29v11M92 98v11" stroke="#7ca8ff" stroke-width="3"/>
+    <text x="92" y="145" text-anchor="middle" class="label">Qwen + LoRA</text>
+    <text x="92" y="165" text-anchor="middle" class="small">4-bit base + adapters</text>
+  </g>
+  <g transform="translate(733 92)">
+    <rect width="185" height="148" rx="15" class="box"/>
+    <path d="M53 97l22-23 17 13 37-42" fill="none" stroke="#47d7c5" stroke-width="4"/>
+    <path d="M52 108h84M52 47v61" stroke="#7890ae" stroke-width="2"/>
+    <text x="92" y="145" text-anchor="middle" class="label">SFT + evaluation</text>
+    <text x="92" y="165" text-anchor="middle" class="small">checkpoint selection</text>
+  </g>
+  <g transform="translate(958 92)">
+    <rect width="207" height="148" rx="15" class="box"/>
+    <path d="M59 47h87v57H59z M76 63h53M76 77h38M76 91h48" stroke="#7ca8ff" stroke-width="3" fill="none"/>
+    <text x="103" y="145" text-anchor="middle" class="label">Inference model</text>
+    <text x="103" y="165" text-anchor="middle" class="small">merged best adapter</text>
+  </g>
+</svg>

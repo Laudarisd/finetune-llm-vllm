@@ -1,0 +1,33 @@
+# Python environments and bytecode
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local model downloads and model weights
+models/*
+!models/README.md
+models_32B/*
+!models_32B/README.md
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Training outputs and runtime caches
+outputs/*
+!outputs/README.md
+train_data/image_cache/
+unsloth_compiled_cache/
+.cache/
+
+# Local datasets may be large and have distribution restrictions
+train_data/*.jsonl
+raw_data/images/
+raw_data/json/
+
+# Editor and OS artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
