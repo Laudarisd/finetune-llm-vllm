@@ -387,13 +387,6 @@ The script loads the merged model path from `config.yaml` and saves an overlay i
 The checked-in run summary records 18,000 global steps, training loss 0.1924, best validation loss 0.4157557, and the best checkpoint at step 3,000. The final evaluation shown in the log reports loss 0.8158 and mean token accuracy 0.8437 at epoch 0.6247; this is a different evaluation point from the best checkpoint. These language-model metrics do not replace task-level evaluation of counts, junction detection, polygon quality, and generalization to unseen plans.
 
 
-
-## GitHub publishing notes
-
-This checkout contains local model weights, generated checkpoints, caches, environment files, and large data. `.gitignore` excludes those directories while retaining project code and documentation. If publishing any model or dataset artifacts, confirm redistribution permissions and use suitable hosting such as a model/dataset repository or Git LFS.
-
-For a portfolio, add a few small images under `img/`, include one input/prediction pair, and link to the full [fine-tuning walkthrough](FINETUNING.md).
-
 ## Detailed training walkthrough
 
 See **[FINETUNING.md](FINETUNING.md)** for dataset examples, image preparation, dense vs. MoE, PEFT/LoRA/QLoRA, detailed Python training blocks, logs, and output details.
